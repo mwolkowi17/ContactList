@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="ContactApp.ContactList">
     <StackLayout>
-        <Button Text="New Contact"/>
+        <Button Text="New Contact" Clicked="Button_Clicked"/>
         <ListView x:Name="list" >
         <ListView.ItemTemplate>
             <DataTemplate>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ContactApp.Model
 {
-    class Contact
+    public class Contact
     {
         public int ContactId { get; set; }
         public string Name { get; set; }

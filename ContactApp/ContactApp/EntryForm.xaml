@@ -5,11 +5,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ContactApp.EntryForm">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout>
+    <TableView>
+        <TableRoot>
+            <TableSection Title="Entry Name">
+
+                <EntryCell x:Name="namecell"  Placeholder="Name" Keyboard="Text" Completed="EntryCell_Completed" />
+                <EntryCell x:Name="additionlcell" Placeholder="Aditional Info" Keyboard="Text" Completed="EntryCell_Completed_1"/>
+                
+            </TableSection>
+            
+        </TableRoot>
+        
+    </TableView>
+    <Button Text="add contact" Clicked="Button_Clicked"/>
+    </StackLayout>
 </ContentPage>
