@@ -9,5 +9,7 @@ namespace ContactApp.Model
         public int ContactId { get; set; }
         public string Name { get; set; }
         public string AditionalInfo { get; set; }
+        public string PhoneNr { get; set; }
+        public string Email { get; set; }
     }
 }
