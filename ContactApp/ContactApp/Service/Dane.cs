@@ -1,26 +1,16 @@
 ﻿using ContactApp.Model;
-using ContactApp.Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-namespace ContactApp
+namespace ContactApp.Service
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ContactList : ContentPage
+    public class Dane
     {
-        public ContactList(Dane danelok)
+        public ObservableCollection<Contact> contacts = new ObservableCollection<Contact>()
         {
-            InitializeComponent();
-            BindingContext = danelok;
-            /*list.ItemsSource = new ObservableCollection<Contact>() {
-                new Contact()
+             new Contact()
                 {
                     ContactId=1,
                     Name= "Marcin Wołkowicz",
@@ -57,24 +47,8 @@ namespace ContactApp
 
                 }
             };
-            */
-            //Dane dane = new Dane();
-            list.ItemsSource = danelok.contacts;
         }
 
-        async private void Button_Clicked(object sender, EventArgs e)
-        {
-
-            await Navigation.PushAsync(new EntryForm());
-        }
-
-        async private void list_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            if (e.SelectedItem == null)
-                return;
-            var contactselected = e.SelectedItem as Contact;
-            await Navigation.PushAsync(new ContactDetail(contactselected));
-            list.SelectedItem = null;
-        }
+        
     }
-}
+

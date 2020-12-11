@@ -4,9 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
              x:Class="ContactApp.EntryForm">
     <StackLayout>
-    <TableView>
+    <TableView Intent="Form">
         <TableRoot>
             <TableSection Title="Entry Name">
 
@@ -14,6 +15,10 @@
                 <EntryCell x:Name="additionlcell" Placeholder="Aditional Info" Keyboard="Text" Completed="EntryCell_Completed_1"/>
                 
             </TableSection>
+                <TableSection Title="Details">
+                    <EntryCell Placeholder="Phone" Keyboard="Numeric"/>
+                    <EntryCell Placeholder="Email" Keyboard="Email"/>
+                </TableSection>
             
         </TableRoot>
         

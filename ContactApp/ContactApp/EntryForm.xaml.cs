@@ -1,4 +1,5 @@
 ﻿using ContactApp.Model;
+using ContactApp.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,8 +36,14 @@ namespace ContactApp
          private void Button_Clicked(object sender, EventArgs e)
         {
             contact_new.Name = namecell.Text;
+            Dane daneprzek = new Dane();
+            Contact addContact = new Contact();
+            addContact.Name = namecell.Text;
+            daneprzek.contacts.Add(addContact);
             DisplayAlert("Contact Added", contact_new.Name, "Ok");
-            Navigation.PopAsync();
+            //Navigation.PopAsync();
+            Navigation.PushAsync(new ContactList(daneprzek));
+            
         }
     }
 }
