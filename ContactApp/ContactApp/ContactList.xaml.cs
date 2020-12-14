@@ -76,5 +76,7 @@ namespace ContactApp
             await Navigation.PushAsync(new ContactDetail(contactselected));
             list.SelectedItem = null;
         }
+
+       
     }
 }
